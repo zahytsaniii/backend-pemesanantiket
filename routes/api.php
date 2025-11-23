@@ -22,11 +22,11 @@ Route::middleware('auth:sanctum')->group(function () {
         });
         
         // CRUD Travel Schedule
-        Route::get('/schedules',            [TravelScheduleController::class, 'index']);
-        Route::post('/schedules',           [TravelScheduleController::class, 'store']);
-        Route::get('/schedules/{id}',       [TravelScheduleController::class, 'show']);
-        Route::put('/schedules/{id}',       [TravelScheduleController::class, 'update']);
-        Route::delete('/schedules/{id}',    [TravelScheduleController::class, 'destroy']);
+        Route::get('/admin/schedules',            [TravelScheduleController::class, 'index']);
+        Route::post('/admin/schedules',           [TravelScheduleController::class, 'store']);
+        Route::get('/admin/schedules/{id}',       [TravelScheduleController::class, 'show']);
+        Route::put('/admin/schedules/{id}',       [TravelScheduleController::class, 'update']);
+        Route::delete('/admin/schedules/{id}',    [TravelScheduleController::class, 'destroy']);
 
         // Reports
         Route::get('/reports/passengers',           [TravelScheduleController::class, 'passengerReport']);

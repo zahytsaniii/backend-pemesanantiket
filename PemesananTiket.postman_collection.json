@@ -1,0 +1,536 @@
+{
+	"info": {
+		"_postman_id": "b8b6324f-0741-4ff3-892e-e6e588f87012",
+		"name": "PemesananTiket",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30352595",
+		"_collection_link": "https://lively-moon-532299.postman.co/workspace/c175d789-4c56-4afe-8cd5-95ed758a7690/collection/30352595-b8b6324f-0741-4ff3-892e-e6e588f87012?action=share&source=collection_link&creator=30352595"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"item": [
+						{
+							"name": "Register Admin",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"Admin Satu\",\r\n  \"email\": \"admin@test.com\",\r\n  \"password\": \"secret123\",\r\n  \"role\": \"admin\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/api/register",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Register User",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"Admin Satu\",\r\n  \"email\": \"admin@test.com\",\r\n  \"password\": \"secret123\",\r\n  \"role\": \"admin\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/api/register",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"register"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Login",
+					"item": [
+						{
+							"name": "Dashboard",
+							"item": [
+								{
+									"name": "Test Admin",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"email\": \"budi@test.com\",\r\n  \"password\": \"secret123\"\r\n}\r\n"
+										},
+										"url": {
+											"raw": "{{baseURL}}/api/admin/test",
+											"host": [
+												"{{baseURL}}"
+											],
+											"path": [
+												"api",
+												"admin",
+												"test"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Test User",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"email\": \"budi@test.com\",\r\n  \"password\": \"secret123\"\r\n}\r\n"
+										},
+										"url": {
+											"raw": "{{baseURL}}/api/admin/test",
+											"host": [
+												"{{baseURL}}"
+											],
+											"path": [
+												"api",
+												"admin",
+												"test"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"admin@test.com\",\r\n  \"password\": \"secret123\"\r\n}\r\n"
+								},
+								"url": {
+									"raw": "{{baseURL}}/api/login",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"login"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Logout",
+					"item": [
+						{
+							"name": "Logout",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "3|X9gQWCRD7r5qiOcMQSmkSJs2RXphbvtLicvvO4w3b30f7892",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/api/logout",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"logout"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Schedule",
+					"item": [
+						{
+							"name": "Create Schedule",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "7|oEdKLl1dmZTKtYywxVedrKpqYyK6ahXk7SWbCm9g9d183b35",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"destination\": \"Bandung\",\r\n  \"departure_datetime\": \"2025-02-20 09:00:00\",\r\n  \"quota\": 4,\r\n  \"price\": 150000,\r\n  \"category\": \"vip\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/api/admin/schedules",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"admin",
+										"schedules"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "All Travel Schedules",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "Detail Schedule",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "6|zPnERihgC5fiafYoqdEnHTWTD60f1sSxxUuh30g6583ae8ab",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/api/admin/schedules/2",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"admin",
+										"schedules",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Schedule",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "7|M1a6Ma2YSbc4P2kks3K9bUAOJ83tLMBNOtph4uioa2bf04b0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"quota\": 8,\r\n  \"price\": 160000\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/api/admin/schedules/4",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"admin",
+										"schedules",
+										"4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Schedule",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "7|M1a6Ma2YSbc4P2kks3K9bUAOJ83tLMBNOtph4uioa2bf04b0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/api/admin/schedules/4",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"admin",
+										"schedules",
+										"4"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Report",
+					"item": [
+						{
+							"name": "Number of Passenger",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "Detail passenger",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Ticket",
+					"item": [
+						{
+							"name": "Available Schedule",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "Book Ticket",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "8|II2WGKaIc6m94Dmpi6RH9VyLOrcD9eEm3lKNJmpY7b54f90d",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"travel_schedule_id\": 5,\r\n  \"seats\": 9\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/api/book",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"book"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Payment",
+					"item": [
+						{
+							"name": "Payment",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "8|II2WGKaIc6m94Dmpi6RH9VyLOrcD9eEm3lKNJmpY7b54f90d",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "multipart/form-data",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "booking_id",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "payment_proof",
+											"type": "file",
+											"src": "/C:/Users/zahyt/Pictures/Screenshots/Screenshot 2025-11-21 083503.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}/api/payment",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"payment"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "New Request",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "History",
+					"item": [
+						{
+							"name": "History",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Profile",
+			"item": [
+				{
+					"name": "Data User",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"budi@test.com\",\r\n  \"password\": \"secret123\"\r\n}\r\n"
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/admin/test",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"test"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "",
+			"type": "default"
+		}
+	]
+}
