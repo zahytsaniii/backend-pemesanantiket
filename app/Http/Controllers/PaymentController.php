@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Booking;
 use App\Models\Payment;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class PaymentController extends Controller
 {
@@ -44,15 +45,20 @@ class PaymentController extends Controller
     // Invoice sederhana
     public function invoice($id)
     {
+        $user = auth()->user(); // auth:sanctum
+        if (!$user) {
+            return response()->json(['message' => 'Unauthorized'], 401);
+        }
+
         $booking = Booking::with(['schedule', 'payment'])
             ->where('id', $id)
-            ->where('user_id', auth()->id())
+            ->where('user_id', $user->id)
             ->firstOrFail();
 
-        return response()->json([
-            'invoice_number' => 'INV-' . str_pad($booking->id, 5, '0', STR_PAD_LEFT),
-            'booking' => $booking,
-            'user' => auth()->user(),
-        ]);
+        $invoice_number = 'INV-' . str_pad($booking->id, 5, '0', STR_PAD_LEFT);
+
+        $pdf = Pdf::loadView('invoice', compact('booking', 'user', 'invoice_number'));
+
+        return $pdf->stream("invoice-{$invoice_number}.pdf");
     }
 }
