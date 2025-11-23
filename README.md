@@ -62,14 +62,6 @@ Fitur meliputi: manajemen jadwal travel, pemesanan tiket, pembayaran, laporan ju
 
 ---
 
-# 🔐 Sanctum Setup
-
-## Jalankan:
-	php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"
-	php artisan migrate
-
----
-
 # 📦 Migrasi & Seeder
 
 ## Jalankan migrasi + seeder:

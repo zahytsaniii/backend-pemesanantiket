@@ -10,11 +10,12 @@ class TravelSchedule extends Model
     use HasFactory;
 
     protected $fillable = [
-        'title',
+        'departure_city',
         'destination',
         'departure_datetime',
         'quota',
         'price',
+        'category'
     ];
 
     protected $casts = [

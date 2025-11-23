@@ -16,11 +16,12 @@ class TravelScheduleController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'title' => 'required|string',
+            'departure_city' => 'string',
             'destination' => 'required|string',
             'departure_datetime' => 'required|date',
             'quota' => 'required|integer|min:1',
-            'price' => 'required|integer|min:1000'
+            'price' => 'required|integer|min:1000',
+            'category' => 'required|in:reguler,vip'
         ]);
 
         $schedule = TravelSchedule::create($validated);
@@ -42,6 +43,7 @@ class TravelScheduleController extends Controller
             'departure_datetime' => 'date',
             'quota' => 'integer|min:1',
             'price' => 'integer|min:1000',
+            'category' => 'in:reguler,vip'
         ]);
 
         $schedule->update($validated);

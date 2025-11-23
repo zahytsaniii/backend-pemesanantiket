@@ -13,11 +13,12 @@ return new class extends Migration
     {
         Schema::create('travel_schedules', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
+            $table->string('departure_city')->default('Klaten');
             $table->string('destination');
             $table->timestamp('departure_datetime');
             $table->integer('quota');
             $table->decimal('price',12,2);
+            $table->enum('category', ['reguler', 'vip'])->default('reguler');
             $table->timestamps();
         });
     }

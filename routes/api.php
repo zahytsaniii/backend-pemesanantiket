@@ -45,6 +45,11 @@ Route::middleware('auth:sanctum')->group(function () {
         // Book a ticket
         Route::post('/book', [BookingController::class, 'book']);
 
+        // Get booking Id
+        Route::get('/bookings/{id}', [BookingController::class, 'getOrder']);
+        Route::post('/bookings/{id}/cancel', [BookingController::class, 'cancelBooking']);
+        Route::post('/bookings/{id}/pay', [BookingController::class, 'payBooking']);
+
         // Booking history
         Route::get('/history', [BookingController::class, 'history']);
 

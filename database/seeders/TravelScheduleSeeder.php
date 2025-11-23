@@ -14,27 +14,27 @@ class TravelScheduleSeeder extends Seeder
     public function run(): void
     {
         TravelSchedule::create([
-            'title' => 'Schedule1',
             'destination' => 'Bandung',
             'departure_datetime' => '2025-02-01 08:00:00',
             'quota' => 10,
-            'price' => 120000
+            'price' => 120000,
+            'category' => 'reguler'
         ]);
 
         TravelSchedule::create([
-            'title' => 'Schedule2',
             'destination' => 'Jakarta',
             'departure_datetime' => '2025-02-05 09:00:00',
             'quota' => 12,
-            'price' => 150000
+            'price' => 150000,
+            'category' => 'vip'
         ]);
 
         TravelSchedule::create([
-            'title' => 'Schedule3',
             'destination' => 'Bogor',
             'departure_datetime' => '2025-02-10 07:30:00',
             'quota' => 8,
-            'price' => 90000
+            'price' => 90000,
+            'category' => 'reguler'
         ]);
     }
 }
